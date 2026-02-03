@@ -6,6 +6,8 @@ type cb_1 from commandbutton within w_inicio1
 end type
 type cb_2 from commandbutton within w_inicio1
 end type
+type cb_bienvenido from commandbutton within w_inicio1
+end type
 end forward
 
 global type w_inicio1 from window
@@ -104,6 +106,7 @@ string sheetlisttext = "SheetList"
 string sheetlistpaneltext = "SheetList"
 cb_1 cb_1
 cb_2 cb_2
+cb_bienvenido cb_bienvenido
 end type
 global w_inicio1 w_inicio1
 
@@ -112,12 +115,14 @@ global w_inicio1 w_inicio1
 on w_inicio1.create
 this.cb_1=create cb_1
 this.cb_2 = create cb_2
-this.Control[]={this.cb_1,this.cb_2}
+this.cb_bienvenido = create cb_bienvenido
+this.Control[]={this.cb_1,this.cb_2,this.cb_bienvenido}
 end on
 
 on w_inicio1.destroy
 destroy(this.cb_1)
 destroy(this.cb_2)
+destroy(this.cb_bienvenido)
 end on
 
 type cb_1 from commandbutton within w_inicio1
@@ -148,6 +153,24 @@ string text = "Segundo Botón"
 end type
 
 event clicked;messagebox("Acción del segundo botón", "Has hecho clic en cb_2")
+end event
+
+type cb_bienvenido from commandbutton within w_inicio1
+integer x = 1800
+integer y = 360
+integer width = 626
+integer height = 196
+integer taborder = 30
+integer textsize = -12
+integer weight = 700
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "Bienvenido"
+end type
+
+event clicked;messagebox("Bienvenido", "Bienvenido a nuestra organizacion", Information!)
 end event
 
 
