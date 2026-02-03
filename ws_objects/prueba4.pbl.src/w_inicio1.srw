@@ -4,6 +4,8 @@ global type w_inicio1 from window
 end type
 type cb_1 from commandbutton within w_inicio1
 end type
+type cb_2 from commandbutton within w_inicio1   // Nuevo botón
+end type
 end forward
 
 global type w_inicio1 from window
@@ -104,13 +106,17 @@ cb_1 cb_1
 end type
 global w_inicio1 w_inicio1
 
+
+
 on w_inicio1.create
 this.cb_1=create cb_1
-this.Control[]={this.cb_1}
+this.cb_2 = create cb_2   // Crear el nuevo botón
+this.Control[]={this.cb_1,this.cb_2}
 end on
 
 on w_inicio1.destroy
 destroy(this.cb_1)
+destroy(this.cb_2)
 end on
 
 type cb_1 from commandbutton within w_inicio1
@@ -129,6 +135,19 @@ string text = "Hola Mundo"
 end type
 
 event clicked;messagebox("Mi primera ventana", "mi primera Ventana")
+end event
+
+// Nuevo botón
+type cb_2 from commandbutton within w_inicio1
+integer x = 1102
+integer y = 600   // Posición más abajo para que no se superponga
+integer width = 626
+integer height = 196
+integer taborder = 20
+string text = "Segundo Botón"
+end type
+
+event clicked;messagebox("Acción del segundo botón", "Has hecho clic en cb_2")
 end event
 
 
