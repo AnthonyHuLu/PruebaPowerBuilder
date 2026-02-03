@@ -103,6 +103,7 @@ string sheetlistimage = "RibbonSmallButtonDefault!"
 string sheetlisttext = "SheetList"
 string sheetlistpaneltext = "SheetList"
 cb_1 cb_1
+cb_2 cb_2
 end type
 global w_inicio1 w_inicio1
 
