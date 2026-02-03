@@ -125,9 +125,11 @@ fontcharset fontcharset = ansi!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Tahoma"
-string text = "Hola"
+string text = "Hola Mundo"
 end type
 
 event clicked;messagebox("Mi primera ventana", "mi primera Ventana")
 end event
+
+
 
